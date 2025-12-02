@@ -1,0 +1,416 @@
+:root {
+  --bg: #020617;
+  --bg-soft: #020617;
+  --surface: #020617;
+  --surface-soft: #020617;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --brand: #2563eb;
+  --brand-accent: #22c55e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #020617;
+  color: var(--text);
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h1 span {
+  color: var(--brand);
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+/* Navbar */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(2, 6, 23, 0.9);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--brand);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--brand);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* Hero */
+
+.hero {
+  padding-top: 5rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.lead {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.hero-cta {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Cards */
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.7);
+  padding: 1rem 1.25rem;
+}
+
+.card-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.card-list.small li {
+  margin-bottom: 0.25rem;
+}
+
+.card-note {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: var(--brand);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #1d4ed8;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn.secondary:hover {
+  border-color: var(--brand);
+}
+
+.btn.full {
+  width: 100%;
+}
+
+/* Layout helpers */
+
+.grid-2 {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section-intro {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 1.5rem;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  background: #020617;
+  border: 1px solid var(--border);
+}
+
+/* Tags */
+
+.tag {
+  font-size: 0.7rem;
+  color: var(--brand);
+  margin-bottom: 0.5rem;
+}
+
+/* Timeline */
+
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -0.05rem;
+  top: 0.4rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.timeline-card {
+  border-radius: 0.8rem;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.timeline-role {
+  font-weight: 600;
+}
+
+.timeline-period {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+/* Contact */
+
+.contact-form .field {
+  margin-bottom: 0.6rem;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: #020617;
+  color: var(--text);
+  padding: 0.45rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Center */
+
+.center {
+  text-align: center;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 3.1rem;
+    right: 1.25rem;
+    left: 1.25rem;
+    background: #020617;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+    flex-direction: column;
+    padding: 0.75rem 0.9rem;
+    gap: 0.6rem;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
